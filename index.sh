@@ -9,6 +9,6 @@ userid=${EXEC_USER_ID}
 
 echo "Summoning $username - UID:$userid ..."
 adduser $username -u $userid -D -s /bin/sh
-chown -R $username /build
-chmod -R 755 /build
+chown -R $username /www
+chmod -R 755 /www
 exec su-exec $username "$@"

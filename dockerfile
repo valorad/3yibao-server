@@ -1,14 +1,21 @@
-FROM golang:alpine
+FROM alpine:latest
 
-ADD ./build /build
+ADD ./build /www
 
-WORKDIR /build
+ADD ./index.sh /www
 
-VOLUME ["/build"]
+RUN echo " --- Software installation starts --- " \
+ && apk update \
+ && apk add --no-cache su-exec libc6-compat \
+ && rm -rf /var/cache/apk/*
+
+WORKDIR /www
+
+VOLUME ["/www"]
 
 EXPOSE 3399
 
 ENV EXEC_USER=valorad
 ENV EXEC_USER_ID=1000
-ENTRYPOINT ["/build/index.sh"]
-CMD sh ./3yibao && /bin/sh
+ENTRYPOINT ["/www/index.sh"]
+CMD /www/3yibao-server && /bin/sh
