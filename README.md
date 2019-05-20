@@ -1,5 +1,8 @@
 # 3yibao-server
-[![](https://images.microbadger.com/badges/version/valorad/3yibao.svg)](https://microbadger.com/images/valorad/3yibao "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/valorad/3yibao.svg)](https://microbadger.com/images/valorad/3yibao "Get your own image badge on microbadger.com")
+
+[![Docker pulls](https://img.shields.io/docker/pulls/valorad/3yibao.svg?style=flat-square)](https://hub.docker.com/r/valorad/3yibao/)
+[![](https://images.microbadger.com/badges/version/valorad/3yibao.svg)](https://microbadger.com/images/valorad/3yibao "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/valorad/3yibao.svg)](https://microbadger.com/images/valorad/3yibao "Get your own image badge on microbadger.com")
 
 back-end for [3yibao](https://github.com/valorad/3yibao-react)
 
@@ -7,7 +10,7 @@ back-end for [3yibao](https://github.com/valorad/3yibao-react)
 ``` bash
   docker run -d -p 3399:3399 \
   --name 3yibao-c1 \
-  -e EXEC_USER=$USER -e EXEC_USER=$UID \
+  -e EXEC_USER=$USER -e EXEC_USER_ID=$UID \
   valorad/3yibao
 
   # inspect id
